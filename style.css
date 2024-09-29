@@ -1,0 +1,404 @@
+/**
+Theme Name: Astra Child
+Author: Brainstorm Force
+Author URI: http://wpastra.com/
+Description: Child theme for Astra, A very lightweight and beautiful theme made to work with Page Builders.
+Version: 1.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: astra-child
+Template: astra
+*/
+
+
+/* Variables */
+:root{
+    --ast-global-color-0: white;
+    --ast-global-color-3: white;
+    --ast-global-color-2: white;
+    --ast-global-color-5: #1e1e1e;
+}
+
+/* Reduit la taille du titre en mobile */
+div.title_img{
+    font-size: 2.5em;
+}
+/* Couleur de fond du header */
+div.ast-primary-header-bar, div#content, .woocommerce-cart .cart-collaterals .cart_totals>h2{
+    background-color: #1e1e1e;
+}
+
+.woocommerce-js div.product .woocommerce-tabs ul.tabs li a{
+    color: #777;
+}
+.ast-builder-menu-mobile .main-navigation .main-header-menu{
+    background-color: #34493c
+}
+
+.ast-builder-menu-mobile .main-navigation .menu-item.current-menu-item > .menu-link{
+    color: #1e1e1e;
+}
+/* Réduit le header */
+.ast-logo-title-inline .ast-site-identity{
+    padding: 0;
+}
+
+div:has(div.title_img){
+    position: relative;
+}
+
+/* Couleur menu */
+body .woocommerce-MyAccount-navigation-link.is-active a{
+    background-color: #8ca890;
+    color: #1e1e1e;
+}
+
+/* Intègre l'image d'accueil en abolsutre et en full screen */
+div.title_img{
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 2.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgb(226, 226, 226);
+    text-shadow: 2px 2px 5px #920000;
+}
+
+div.title_img  p{
+    margin-bottom: 0;
+}
+
+/* Style img page d'accueil en full screen */
+div.img_accueil{
+    height: 92vh;
+    max-width: 100%;
+    filter: brightness(60%);
+    /* url background récupèrer dynamiquement dans le fonction.php */
+    /* background: url('http://piments-du-soleil/wp-content/uploads/2024/09/accueil11.jpg'); */
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+/* Lien vers ancre */
+div.title_img + a{
+    position: absolute;
+    bottom: 5%;
+}
+
+p:has(i.fa-solid.fa-chevron-down){
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flashing 1s infinite alternate-reverse ease-in;
+    background-color: rgba(255, 255, 255, .5);
+    width: 2em;
+    height: 2em;
+    border-radius: 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:has(i.fa-solid.fa-chevron-down){
+    color: #920000;
+}
+
+/* Animation du lien ancre */
+@keyframes flashing {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Cache les nombre de produits énumérés */
+p.woocommerce-result-count, select.orderby{
+    display: none;
+}
+
+/* Disposition des priduits en colonnes */
+.woocommerce-page ul.products:not(.elementor-grid), .woocommerce.mobile-columns-2 ul.products:not(.elementor-grid),
+    .woocommerce-page.mobile-columns-2 ul.products:not(.elementor-grid) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+/* Style du contenair produit */
+.astra-shop-thumbnail-wrap {
+    border-radius: 50px 50px;
+    background-color: #fbfbfb;
+    border: 1px solid #e7e7e7;
+    padding: 1em;
+}
+
+ /* Centre les produits dans la page */
+ul.products.columns-3{
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Contenair principal */
+div#primary.content-area.primary{
+     background-color: #1e1e1e;
+     padding: 0 1em;
+}
+
+/* Section de titre de la boutique en page d'accueil */
+section.ast-archive-description{
+    text-shadow: 2px 2px 0px  #bd0000;
+    border:none;
+    width: 50%;
+}
+
+section.ast-archive-description h1{
+    color: #e7e5e5; 
+}
+
+/* Couleur des étoiles  */
+.woocommerce div.star-rating{
+    color: white;
+}
+
+/* Permet de centrer les étoiles au centre du produit */
+.woocommerce ul.products li.product.mobile-align-left, .woocommerce-page ul.products li.product.mobile-align-left .star-rating {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.elementor-229 .elementor-element.elementor-element-f9f65b9, .elementor-element.elementor-element-ca1e29e.e-con-full.e-flex.e-con.e-child{
+    flex-direction: column;
+}
+
+div.elementor-229 .elementor-element.elementor-element-2d8f8cd .elementor-icon-box-wrapper{
+    text-align: center;
+}
+
+/* Li description produit seul */
+li#tab-title-description.description_tab.active{
+    --ast-global-color-0: #6FAF77;
+}
+
+/* PAGE CONTACT*/
+/* Formulaire de contact */
+div.elementor-shortcode{
+    border-radius: 5px;
+    border: 1px solid #3d3d3d; 
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+th{
+    background-color: #1e1e1e;;
+    color: #6FAF77;
+}
+
+div.cart_totals>h2{
+    color:  #fbfbfb;
+} 
+
+.woocommerce-info, div.woocommerce-message{
+    background-color: transparent;
+    color: #6FAF77;
+}
+
+input#billing_first_name, input#billing_last_name, input#billing_company,
+input#billing_address_1, input#billing_address_2, input#billing_postcode,
+input#billing_city, input#billing_phone,input#billing_email, input#billing_state,
+textarea#order_comments, input.select2-search__field,
+input#account_first_name, input#account_last_name , input#account_display_name , input#account_email , input#password_current, input#password_1 , input#password_2  {
+    background-color:  #222222;
+    color: #fbfbfb;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-Address-title{
+    background:  #222222;
+    color: #fbfbfb;
+}
+
+.woocommerce-Address-title.title h2, legend, h1.entry-title{
+    color: #6FAF77;
+  
+}
+   
+label{
+    color: #e7e5e5; 
+}
+
+input[type="submit"]{
+    display: block;
+    margin: 0 auto;
+}
+
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required, 
+textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required{
+    border-radius: 5px;
+    background-color: #222222;
+    border: none;
+}
+
+p:has(input[type="submit"]) {
+    margin-bottom: 0;
+}
+
+textarea{
+    resize: none;
+}
+
+li.page_item{
+    background-color: #1e1e1e;
+}
+
+/* Ajuste les marges de la page contact */
+div.elementor-element.elementor-element-66d7f00.e-con-full.e-flex.e-con.e-parent.e-lazyloaded, 
+div#primary.content-area.primary{
+   padding-left: 0;
+   padding-right: 0;
+}
+
+
+/* PAGE PANIER */
+td.product-remove{
+    background-color: #8ca890;
+ }
+ .woocommerce-js a.remove {
+     color: #1e1e1e;
+     --ast-global-color-3: #1e1e1e;
+ }
+ 
+ /* PAGE CONFIMRATION */
+ div.woocommerce-info{
+    margin-top: 2%;
+ }
+
+ form.checkout.woocommerce-checkout{
+    margin-bottom: 2%;
+ }
+/* PAGE ACCOUNT */
+ div.woocommerce-MyAccount-content{
+    margin: 2% 0;
+ }
+
+ nav.woocommerce-MyAccount-navigation ul {
+    padding-left: 0;
+ }
+
+ /* Prooduit zommImg */
+ div.woocommerce-product-gallery__image {
+    margin: 2% 0;
+ }
+
+/* FOOTER */
+i.fa-solid.fa-phone, i.fa-solid.fa-envelope {
+    color: rgb(240, 247, 247);
+}
+
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"] h3{
+    font-size: 1.4em;
+}
+
+aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-inner{
+    margin-top: .7em;
+}
+
+.woocommerce ul.products li.product.mobile-align-left, .woocommerce-page ul.products li.product.mobile-align-left{
+    text-align: center;
+}
+
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"].footer-widget-area-inner,
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner{
+    text-align: center;
+} 
+
+
+.site-footer-primary-section-2.site-footer-section.site-footer-section-2{
+    order: 3;
+}
+
+
+
+/******* MEDIA QUERIES ************/
+
+@media (480px <= width <= 768px) {
+   
+    div.title_img{
+        font-size: 3.5em;
+    } 
+    .woocommerce-page ul.products:not(.elementor-grid), .woocommerce.mobile-columns-2 ul.products:not(.elementor-grid),
+    .woocommerce-page.mobile-columns-2 ul.products:not(.elementor-grid) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 60%;
+   }
+
+    /* Aligne le footer en colonne */
+    div.ast-builder-footer-grid-columns.site-primary-footer-inner-wrap.ast-builder-grid-row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }  
+   
+}
+
+@media ( width >= 768px ) {
+
+    div.title_img{
+        font-size: 4.5em;
+    } 
+
+    /* Disposition des produits */
+    .woocommerce-page ul.products:not(.elementor-grid), .woocommerce.mobile-columns-2 ul.products:not(.elementor-grid),
+     .woocommerce-page.mobile-columns-2 ul.products:not(.elementor-grid) {
+        display: grid;
+        grid-template-columns: repeat(3,minmax(0,1fr));
+        width: 60%;
+    }
+
+      /* Inverse l'ordre du dernier element dans le footer */
+    .site-footer-primary-section-2.site-footer-section.site-footer-section-2{
+        order: initial;
+    }
+
+    /* Ajuste le positionnement des coordonnées */
+    .elementor-229 .elementor-element.elementor-element-f9f65b9, .elementor-element.elementor-element-ca1e29e.e-con-full.e-flex.e-con.e-child{
+        flex-direction: row;
+    }
+    /* Ajuste le positionnement des coordonnées */ 
+    div.elementor-229 .elementor-element.elementor-element-2d8f8cd .elementor-icon-box-wrapper{
+        text-align: left;
+    }
+
+    td.product-remove{
+        background-color: initial;
+     }
+     .woocommerce-js a.remove {
+         color: #fbfbfb;
+         --ast-global-color-3: white;
+     }
+     
+}
+
+@media ( width >= 1024px ) {
+    /* Disposition des produits */
+    .woocommerce-page ul.products:not(.elementor-grid), .woocommerce.mobile-columns-2 ul.products:not(.elementor-grid),
+     .woocommerce-page.mobile-columns-2 ul.products:not(.elementor-grid) {
+        display: grid;
+        grid-template-columns: repeat(3,minmax(0,1fr));
+        width: 50%;
+    }
+
+    /* Ajuste l epositionnement des coordonnées */
+    .elementor-229 .elementor-element.elementor-element-f9f65b9, .elementor-element.elementor-element-ca1e29e.e-con-full.e-flex.e-con.e-child{
+        flex-direction: row;
+    }
+}
+
+
