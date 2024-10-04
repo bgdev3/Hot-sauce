@@ -38,7 +38,6 @@
 		?>
 
 	<?php astra_entry_bottom(); ?>
-
 </article><!-- #post-## -->
 
 <?php astra_entry_after(); ?>

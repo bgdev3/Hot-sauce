@@ -76,7 +76,6 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
 				
 						
 					<div class="img_accueil"></div>
-					<?php //echo wp_get_attachment_image($image_url, 'large', "", ["class" => "img_accueil", "alt" => "image d'acceuil"]); ?>
 					
 					<p>
 						<a href="#primary"><i class="fa-solid fa-chevron-down"></i></a>
