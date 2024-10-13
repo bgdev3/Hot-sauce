@@ -213,6 +213,33 @@ li#tab-title-description.description_tab.active, li#tab-title-reviews.reviews_ta
     margin: 0 auto;
 }
 /* PAGE CONTACT*/
+
+/* Dispoistion contact en colonne */
+.fl-col-group.fl-node-qsniwzb0lkxm.fl-col-group-nested, .fl-col-group.fl-node-0s1nxqogi6e4.fl-col-group-nested,
+.fl-col-group.fl-node-jrhm893x0pvn.fl-col-group-nested {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Alignement center text sauf ceux du formulaire */
+.fl-col-group.fl-node-ix0m1l789c5t div.fl-rich-text p:not(.fl-col.fl-node-549fy7dughjk.fl-col-small p) {
+    text-align: center !important;
+}
+
+
+/* ALigne les icones de contact */
+.fl-module-content.fl-node-content{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Largeur formulaire */
+.fl-col.fl-node-549fy7dughjk.fl-col-small{
+   max-width: 100%;
+}
+
 /* Formulaire de contact */
 div.elementor-shortcode{
     border-radius: 5px;
@@ -295,6 +322,29 @@ div#primary.content-area.primary{
 }
 
 
+/* PAGE QUI SOMMES-NOUS */
+/* Dispositionne le premier block img/text afin d'inverser l'ordre par default */
+.fl-col-group.fl-node-yrqukxlizpjc{
+    display: flex;
+    flex-direction: column;
+}
+
+.fl-col-group.fl-node-yrqukxlizpjc, 
+.fl-row.fl-row-fixed-width.fl-row-bg-none.fl-node-y56f47uzs2pn.fl-row-default-height.fl-row-align-center,
+.fl-row.fl-row-fixed-width.fl-row-bg-none.fl-node-g35dil07xrmp.fl-row-default-height.fl-row-align-center{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.fl-col.fl-node-3t67k8qxi1pr.fl-col-small{
+    order: 1;
+}
+
+.woocommerce-page #content table.cart .button:not(.coupon .button){
+    display: none;
+}
+
+
 /* PAGE PANIER */
 td.product-remove{
     background-color: #8ca890;
@@ -303,7 +353,7 @@ td.product-remove{
      color: #1e1e1e;
      --ast-global-color-3: #1e1e1e;
  }
- 
+
  /* PAGE CONFIMRATION */
  div.woocommerce-info{
     margin-top: 2%;
@@ -315,6 +365,11 @@ td.product-remove{
  form.checkout.woocommerce-checkout{
     margin-bottom: 2%;
  }
+
+ /* a.button.wc-backward{
+    padding-top: 0;
+    line-height: .9em;
+ } */
 /* PAGE ACCOUNT */
  div.woocommerce-MyAccount-content{
     margin: 2% 0;
@@ -323,11 +378,6 @@ td.product-remove{
  nav.woocommerce-MyAccount-navigation ul {
     padding-left: 0;
  }
-
- /* Prooduit zommImg
- div.woocommerce-product-gallery__image {
-    margin: 2% 0;
- } */
 
 /* FOOTER */
 i.fa-solid.fa-phone, i.fa-solid.fa-envelope {
@@ -355,6 +405,11 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     order: 3;
 }
 
+/* Stylise le lien ici du footer */
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner a:not(
+    .footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner i +a){
+    color: #B51C04;
+}
 
 
 /******* MEDIA QUERIES ************/
@@ -382,6 +437,7 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     .woocommerce-page ul.products.columns-4 {
         margin: initial;
     }
+
    
 }
 
@@ -391,6 +447,23 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
         font-size: 4.5em;
     } 
 
+    /* Positionne le premier block image/text en inversant l'ordre par default */
+    .fl-col-group.fl-node-yrqukxlizpjc{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .fl-col.fl-node-3t67k8qxi1pr.fl-col-small{
+        order: 0;
+    }
+    
+.fl-col-group.fl-node-qsniwzb0lkxm.fl-col-group-nested, .fl-col-group.fl-node-0s1nxqogi6e4.fl-col-group-nested,
+.fl-col-group.fl-node-jrhm893x0pvn.fl-col-group-nested {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
     /* Disposition des produits */
     .woocommerce-page ul.products:not(.elementor-grid), .woocommerce.mobile-columns-2 ul.products:not(.elementor-grid),
      .woocommerce-page.mobile-columns-2 ul.products:not(.elementor-grid) {
@@ -429,6 +502,12 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
         margin: initial;
     }
      
+    .fl-col-group.fl-node-yrqukxlizpjc p{
+        margin-left: .7em;
+    }
+    .fl-row.fl-row-fixed-width.fl-row-bg-none.fl-node-y56f47uzs2pn.fl-row-default-height.fl-row-align-center p{
+        margin-right: .7em;
+    }
 }
 
 @media ( width >= 1024px ) {
@@ -444,8 +523,6 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     .elementor-229 .elementor-element.elementor-element-f9f65b9, .elementor-element.elementor-element-ca1e29e.e-con-full.e-flex.e-con.e-child{
         flex-direction: row;
     }
-
-   
 }
 
 

@@ -19,10 +19,13 @@ define( 'ASTRA_CHILD_THEME_VERSION', '1.0.1' );
 function child_enqueue_scripts() {
 
 	wp_enqueue_style( 'astra-child-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), ASTRA_CHILD_THEME_VERSION, 'all' );
+    
 	wp_enqueue_script('font-awesome-kit', 'https://kit.fontawesome.com/878534cf28.js');
 
+    wp_enqueue_script('astra-child-theme-js', get_stylesheet_directory_uri() . '/script.js');
 }
 add_action( 'wp_enqueue_scripts', 'child_enqueue_scripts' );
+
 
 // Active l'affichage de l'image à la une
 add_theme_support( 'post-thumbnails' );
@@ -52,7 +55,6 @@ function themeTuto_customize_register($wp_customize) {
     )));
 }
 add_action('customize_register', 'themeTuto_customize_register');
-
 
 /**
  * Récupère et affiche dynamiquement l'image d'accueil

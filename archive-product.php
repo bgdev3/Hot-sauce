@@ -63,11 +63,8 @@ if ( woocommerce_product_loop() ) {
 		}
 	}
 
-	echo "Hello0";
+	// echo "Hello0";
 
-
-		
-	
 	woocommerce_product_loop_end();
 
 	/**
