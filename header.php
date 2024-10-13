@@ -73,10 +73,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
 			if ($image_url && is_front_page()) {  
 		?>
 				<div> 
-				
-						
 					<div class="img_accueil"></div>
-					
 					<p>
 						<a href="#primary"><i class="fa-solid fa-chevron-down"></i></a>
 					</p>
