@@ -76,7 +76,7 @@ div.title_img  p{
 
 /* Style img page d'accueil en full screen */
 div.img_accueil{
-    height: 92vh;
+    height: 85vh;
     max-width: 100%;
     filter: brightness(60%);
     /* url background récupèrer dynamiquement dans le fonction.php */
@@ -416,6 +416,11 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
 
 @media (480px <= width <= 768px) {
    
+    /* Hauteur Img accueil */
+    div.img_accueil{
+        height: 90vh;
+    }
+
     div.title_img{
         font-size: 3.5em;
     } 
@@ -437,11 +442,13 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     .woocommerce-page ul.products.columns-4 {
         margin: initial;
     }
-
-   
 }
 
 @media ( width >= 768px ) {
+    /* Hauteur Img accueil */
+    div.img_accueil{
+        height: 95vh;
+    }
 
     div.title_img{
         font-size: 4.5em;

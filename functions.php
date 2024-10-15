@@ -68,3 +68,15 @@ function getImage_header_responsive() {
     <?php
 }
 add_action('wp_head', 'getImage_header_responsive');
+
+/**
+ * Vérifie lors du chargement des scripts que le shortcode contactForm est présent
+ * et ne charge le script de l'API Recaptcha uniquement en cas de la présence du shortcode.
+ */
+add_action('wp_print_scripts', function () {
+    global $post;
+    if(is_a($post, 'WP_Post') && !has_shortcode( $post->post_content, 'contact-form-7')) {
+        wp_dequeue_script('google-recaptcha');
+        wp_dequeue_script('wpcf7-recaptcha');
+    }
+});
