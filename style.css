@@ -411,6 +411,12 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     color: #B51C04;
 }
 
+.fl-module.fl-module-rich-text.fl-node-sj5dwh97opuf .fl-rich-text p:first-child{
+    font-size: 1.5rem;
+} 
+.fl-module.fl-module-rich-text.fl-node-sj5dwh97opuf .fl-rich-text p {
+    margin-bottom: .5em;
+}
 
 /******* MEDIA QUERIES ************/
 
@@ -515,6 +521,14 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     .fl-row.fl-row-fixed-width.fl-row-bg-none.fl-node-y56f47uzs2pn.fl-row-default-height.fl-row-align-center p{
         margin-right: .7em;
     }
+
+    .fl-module.fl-module-rich-text.fl-node-sj5dwh97opuf .fl-rich-text p:first-child{
+        font-size: 1.4em;
+    } 
+    .fl-module.fl-module-rich-text.fl-node-sj5dwh97opuf .fl-rich-text p {
+        margin-bottom: 1.6em;
+    }
+    
 }
 
 @media ( width >= 1024px ) {
