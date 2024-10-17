@@ -268,7 +268,8 @@ input#billing_first_name, input#billing_last_name, input#billing_company,
 input#billing_address_1, input#billing_address_2, input#billing_postcode,
 input#billing_city, input#billing_phone,input#billing_email, input#billing_state,
 textarea#order_comments, input.select2-search__field,
-input#account_first_name, input#account_last_name , input#account_display_name , input#account_email , input#password_current, input#password_1 , input#password_2  {
+input#account_first_name, input#account_last_name , input#account_display_name , input#account_email , input#password_current, input#password_1 , input#password_2n, 
+input#username, input#password, input#reg_email {
     background-color:  #222222;
     color: #fbfbfb;
 }
