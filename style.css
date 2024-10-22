@@ -91,11 +91,10 @@ div.title_img  p{
 
 /* Style img page d'accueil en full screen */
 div.img_accueil{
-    height: 85vh;
+    /* height: 87vh; */
+    height: calc(100vh - 50px);
     max-width: 100%;
     filter: brightness(60%);
-    /* url background récupèrer dynamiquement dans le fonction.php */
-    /* background: url('http://piments-du-soleil/wp-content/uploads/2024/09/accueil11.jpg'); */
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center; 
@@ -109,11 +108,12 @@ div.title_img + a{
 
 p:has(i.fa-solid.fa-chevron-down){
     position: absolute;
-    bottom: 0%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     animation: flashing 1s infinite alternate-reverse ease-in;
     background-color: #1e1e1e;
+    box-shadow: 0 0 5px 1px white;
     width: 2em;
     height: 2em;
     border-radius: 50px 50px;
@@ -480,6 +480,10 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     /* Hauteur Img accueil */
     div.img_accueil{
         height: 95vh;
+    }
+
+    p:has(i.fa-solid.fa-chevron-down){
+        bottom: 5%;
     }
 
     div.title_img{
