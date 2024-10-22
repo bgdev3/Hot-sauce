@@ -299,9 +299,13 @@ input#billing_address_1, input#billing_address_2, input#billing_postcode,
 input#billing_city, input#billing_phone,input#billing_email, input#billing_state,
 textarea#order_comments, input.select2-search__field,
 input#account_first_name, input#account_last_name , input#account_display_name , input#account_email , input#password_current, input#password_1 , input#password_2n, 
-input#username, input#password, input#reg_email {
+input#username, input#password, input#reg_email, 
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required, 
+textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
     background-color:  #222222;
     color: #fbfbfb;
+    border: 1px solid #414141;
+    border-radius: 5px;
 }
 
 .woocommerce-account .woocommerce-MyAccount-content .woocommerce-Address-title{
@@ -317,8 +321,6 @@ h1.entry-title{
     color: #cacaca;
 }
 
-
-   
 label{
     color: #e7e5e5; 
 }
@@ -326,13 +328,6 @@ label{
 input[type="submit"]{
     display: block;
     margin: 0 auto;
-}
-
-input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required, 
-textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required{
-    border-radius: 5px;
-    background-color: #222222;
-    border: none;
 }
 
 p:has(input[type="submit"]) {
