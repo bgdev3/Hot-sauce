@@ -286,6 +286,8 @@ input#username, input#password, input#reg_email {
 h1.entry-title{
     color: #cacaca;
 }
+
+
    
 label{
     color: #e7e5e5; 
@@ -372,6 +374,14 @@ td.product-remove{
     line-height: .9em;
  } */
 /* PAGE ACCOUNT */
+
+header.entry-header .entry-title{
+    margin-top: 1em;
+}
+
+header.entry-header .entry-title, .entry-content h2{
+    font-size: 1.5em;
+}
  div.woocommerce-MyAccount-content{
     margin: 2% 0;
  }
@@ -533,6 +543,9 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
 }
 
 @media ( width >= 1024px ) {
+    header.entry-header .entry-title{
+        margin-top: 0;
+    }
     /* Disposition des produits */
     .woocommerce-page ul.products:not(.elementor-grid), .woocommerce.mobile-columns-2 ul.products:not(.elementor-grid),
      .woocommerce-page.mobile-columns-2 ul.products:not(.elementor-grid) {
