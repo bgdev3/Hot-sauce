@@ -32,17 +32,32 @@ div.ast-primary-header-bar, div#content, .woocommerce-cart .cart-collaterals .ca
 }
 
 /* Gère l'animation du menu burger */
-.ast-main-header-nav-open.ast-header-break-point .ast-mobile-header-wrap .ast-mobile-header-content{
+.ast-main-header-nav-open.ast-header-break-point .ast-mobile-header-wrap .ast-mobile-header-content,
+.ast-mobile-header-wrap .ast-mobile-header-content{
     display: block;
+}
+
+.ast-main-header-nav-open.ast-header-break-point .ast-mobile-header-wrap .ast-mobile-header-content{
     opacity: 1;
     max-height: 300px;
 }
 
+.ast-main-header-nav-open.ast-header-break-point .ast-mobile-header-wrap .ast-mobile-header-content, .ast-mobile-header-wrap .ast-mobile-header-content,
+.ast-mobile-header-wrap .ast-mobile-header-content li, .ast-main-header-nav-open.ast-header-break-point li{
+    transition: all 200ms ease-in-out;
+}
+
 .ast-mobile-header-wrap .ast-mobile-header-content{
-    display: block;
     opacity: 0;
     max-height: 0;
-    transition: all 200ms ease-in-out;
+}
+
+.ast-mobile-header-wrap .ast-mobile-header-content li {
+    z-index: -999;
+}
+
+.ast-main-header-nav-open.ast-header-break-point li{
+   z-index: 999;
 }
 
 .woocommerce-js div.product .woocommerce-tabs ul.tabs li a{
