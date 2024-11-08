@@ -106,13 +106,14 @@ div.title_img  p{
 
 /* Style img page d'accueil en full screen */
 div.img_accueil{
-    /* height: 87vh; */
     height: calc(100vh - 50px);
     max-width: 100%;
-    filter: brightness(60%);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center; 
+    width: 100%;
+    max-height: 100%;
+    /* filter: brightness(80%); */
+     background-size:cover; 
+    background-repeat: no-repeat; 
+    background-position: center;   
 }
 
 /* Lien vers ancre */
@@ -488,9 +489,9 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
 
 @media ( width >= 768px ) {
     /* Hauteur Img accueil */
-    div.img_accueil{
+    /* div.img_accueil{
         height: 95vh;
-    }
+    } */
 
     p:has(i.fa-solid.fa-chevron-down){
         bottom: 5%;
