@@ -24,9 +24,16 @@ Template: astra
     color: #ffd650;
 }
 
+button.accordion-trigger{
+    width: 100%;
+    height: initial;
+}
+
 a:hover{
     color: #C0D9C0;
 }
+
+
 /* Reduit la taille du titre en mobile */
 div.title_img{
     font-size: 2.5em;
@@ -37,7 +44,7 @@ div.ast-primary-header-bar, div#content, .woocommerce-cart .cart-collaterals .ca
 }
 
 /* Evite le superposition du menu burger fermé */
-#content{
+#content, #ast-scroll-top {
     z-index: 999;
 }
 
@@ -314,11 +321,24 @@ div.cart_totals>h2{
     color:  #fbfbfb;
 } 
 
-.woocommerce-info, div.woocommerce-message{
+.woocommerce-info, .woocommerce-message{
     background-color: transparent;
-    color: #C0D9C0;
+    border:none;
 }
 
+.woocommerce-info, .woocommerce-message {
+    color: #6faf77;
+}
+
+.woocommerce-info{
+    margin: 0 0;
+}
+
+.woocommerce-error{
+    background-color: transparent;
+    color: #bd0000;
+    border: none;
+}
 #billing_first_name, #billing_last_name, #billing_company,
 #billing_address_1, #billing_address_2, #billing_postcode,
 #billing_city, #billing_phone, #billing_email, #billing_state,
@@ -410,9 +430,9 @@ td.product-remove{
  }
 
  /* PAGE CONFIMRATION */
- div.woocommerce-info{
+ /* div.woocommerce-info{
     margin-top: 2%;
- }
+ } */
 
  .woocommerce-cart .wc-proceed-to-checkout a.checkout-button{
     line-height: .1em;

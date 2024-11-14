@@ -29,6 +29,10 @@ add_theme_support( 'post-thumbnails' );
 // Active l'affichage grande largeur(pour les images)
 add_theme_support( "align-wide" );
 
+// 
+add_filter( 'doing_it_wrong_trigger_error', '__return_false' );
+
+
 function themeTuto_customize_register($wp_customize) {
     
 	//Personnalise l'image de la page d'accueil
