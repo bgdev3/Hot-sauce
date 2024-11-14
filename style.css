@@ -24,15 +24,9 @@ Template: astra
     color: #ffd650;
 }
 
-button.accordion-trigger{
-    width: 100%;
-    height: initial;
-}
-
 a:hover{
     color: #C0D9C0;
 }
-
 
 /* Reduit la taille du titre en mobile */
 div.title_img{
