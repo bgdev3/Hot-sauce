@@ -525,6 +525,10 @@ header.entry-header .entry-title, .entry-content h2{
  .woocommerce-orders-table.woocommerce-MyAccount-orders.shop_table.shop_table_responsive.my_account_orders.account-orders-table tr{
     margin-bottom: 1em;
  }
+
+ .woocommerce-account .woocommerce-MyAccount-content .woocommerce-Address-title{
+    border: none;
+ }
 /* FOOTER */
 i.fa-solid.fa-phone, i.fa-solid.fa-envelope {
     color: rgb(240, 247, 247);
