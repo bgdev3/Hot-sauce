@@ -529,6 +529,10 @@ header.entry-header .entry-title, .entry-content h2{
  .woocommerce-account .woocommerce-MyAccount-content .woocommerce-Address-title{
     border: none;
  }
+
+ body .woocommerce form.login,  body .woocommerce form.register{
+    border: 1px solid #3d3d3d;
+ }
 /* FOOTER */
 i.fa-solid.fa-phone, i.fa-solid.fa-envelope {
     color: rgb(240, 247, 247);
