@@ -29,9 +29,6 @@ add_theme_support( 'post-thumbnails' );
 // Active l'affichage grande largeur(pour les images)
 add_theme_support( "align-wide" );
 
-// 
-add_filter( 'doing_it_wrong_trigger_error', '__return_false' );
-
 
 function themeTuto_customize_register($wp_customize) {
     
@@ -84,3 +81,39 @@ add_action('wp_print_scripts', function () {
         wp_dequeue_script('wpcf7-recaptcha');
     }
 });
+
+/**
+ * Gère les fluctuation du prix de livraison selon le panier
+ * 
+ */
+function modifier_frais_livraison_conditionnels($rates) {
+    // Récupère le nombre de produits panier
+    $cartCount = WC()->cart->get_cart_contents_count();
+
+    // Si le panier est d'au moins 90euros, indique uniquement la livraison gratuite
+   if (WC()->cart->get_subtotal() >= 90 ) {
+        foreach ($rates as $rate_id => $rate) {
+            // Désactive toutes les autres méthodes de livraison 
+            if ('free_shipping' !== $rate->method_id) {
+                unset($rates[$rate_id]);
+            }
+        }
+    } else {
+        // Selon le nombre de produits dans le panier, ajoute 2 ou 4 euros aux frais de livraisons
+        if ($cartCount > 3  && $cartCount < 7) {
+            foreach ( $rates as $rate_id => $rate ) {
+                if ( 'flat_rate' === $rate->method_id ) {
+                    $rates[$rate_id]->cost = $rate->cost + 2;
+                }
+            }
+        } elseif ($cartCount > 6 && $cartCount < 10) {
+            foreach ( $rates as $rate_id => $rate ) {
+                if ( 'flat_rate' === $rate->method_id ) {
+                    $rates[$rate_id]->cost = $rate->cost + 4;
+                }
+            }
+        }
+    }
+    return $rates;
+}
+add_filter( 'woocommerce_package_rates', 'modifier_frais_livraison_conditionnels', 10, 2 );

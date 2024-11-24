@@ -15,14 +15,26 @@ Template: astra
 :root{
     --ast-global-color-0: #EDEDED;
     --ast-global-color-3: #ededed;
-    --ast-global-color-2: #ededed;
+    --ast-global-color-2: #6faf77;
     --ast-global-color-5: #1e1e1e;
 }
 
-::selection{
-    background-color: #414141;
-    color: #ffd650;
+body{
+    user-select: none;
 }
+
+h2.woocommerce-loop-product__title, .related h2{
+    --ast-global-color-2: #fbfbfb;
+}
+
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
+    border-radius: 50px 50px;
+}
+
+button.button{
+    transition: all .2s linear;
+}
+
 
 a:hover{
     color: #C0D9C0;
@@ -320,7 +332,7 @@ div.cart_totals>h2{
     border:none;
 }
 
-.woocommerce-info, .woocommerce-message {
+.woocommerce-info, .woocommerce-message, th {
     color: #6faf77;
 }
 
@@ -491,6 +503,13 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     margin-bottom: .5em;
 }
 
+.woocommerce-checkout #payment div.payment_box{
+    color: #e7e5e5;
+}
+
+.woocommerce-page.woocommerce-checkout #payment div.payment_box{
+    background-color: #1e1e1e;
+}
 /******* MEDIA QUERIES ************/
 
 @media (480px <= width <= 768px) {
