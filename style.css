@@ -193,11 +193,17 @@ a:has(i.fa-solid.fa-chevron-down){
 p.woocommerce-result-count{
     display: none;
 }
-.woocommerce-ordering{
+.woocommerce .woocommerce-ordering{
     background-color: #fbfbfb;
     border-radius: 5px;
+    float: left;
+    margin-left: 20px;
 }
 
+.ast-woocommerce-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 /* Disposition des produits en colonnes */
 .woocommerce-page ul.products:not(.elementor-grid), .woocommerce.mobile-columns-2 ul.products:not(.elementor-grid),
