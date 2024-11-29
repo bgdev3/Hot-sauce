@@ -190,9 +190,14 @@ a:has(i.fa-solid.fa-chevron-down){
 }
 
 /* Cache les nombre de produits énumérés */
-p.woocommerce-result-count, select.orderby{
+p.woocommerce-result-count{
     display: none;
 }
+.woocommerce-ordering{
+    background-color: #fbfbfb;
+    border-radius: 5px;
+}
+
 
 /* Disposition des produits en colonnes */
 .woocommerce-page ul.products:not(.elementor-grid), .woocommerce.mobile-columns-2 ul.products:not(.elementor-grid),
