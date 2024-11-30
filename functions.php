@@ -117,3 +117,21 @@ function modifier_frais_livraison_conditionnels($rates) {
     return $rates;
 }
 add_filter( 'woocommerce_package_rates', 'modifier_frais_livraison_conditionnels', 10, 2 );
+
+//Masquer la version de WordPress
+function cs_remove_version() {
+    return '';
+}
+add_filter('the_generator', 'cs_remove_version');
+
+//Masquer la version de WordPress des scripts et style
+function fjarrett_remove_wp_version_strings( $src ) {
+    global $wp_version;
+    parse_str(parse_url($src, PHP_URL_QUERY), $query);
+    if ( !empty($query['ver']) && $query['ver'] === $wp_version ) {
+    $src = remove_query_arg('ver', $src);
+    }
+    return $src;
+}
+add_filter( 'script_loader_src', 'fjarrett_remove_wp_version_strings' );
+add_filter( 'style_loader_src', 'fjarrett_remove_wp_version_strings' );
