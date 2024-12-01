@@ -13,6 +13,7 @@
  */
 define( 'ASTRA_CHILD_THEME_VERSION', '1.0.1' );
 
+
 /**
  * Enqueue styles
  */
@@ -24,10 +25,12 @@ function child_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'child_enqueue_scripts' );
 
+
 // Active l'affichage de l'image à la une
 add_theme_support( 'post-thumbnails' );
 // Active l'affichage grande largeur(pour les images)
 add_theme_support( "align-wide" );
+
 
 /**
  * Ajoute une personnalisation pour l'image d'accueil
@@ -56,6 +59,7 @@ function themeTuto_customize_register($wp_customize) {
 }
 add_action('customize_register', 'themeTuto_customize_register');
 
+
 /**
  * Récupère et affiche dynamiquement l'image d'accueil
  */
@@ -72,6 +76,7 @@ function getImage_header_responsive() {
 }
 add_action('wp_head', 'getImage_header_responsive');
 
+
 /**
  * Vérifie lors du chargement des scripts que le shortcode contactForm est présent
  * et ne charge le script de l'API Recaptcha uniquement en cas de la présence du shortcode.
@@ -83,6 +88,7 @@ add_action('wp_print_scripts', function () {
         wp_dequeue_script('wpcf7-recaptcha');
     }
 });
+
 
 /**
  * Gère les fluctuation du prix de livraison selon le panier
@@ -120,6 +126,7 @@ function modifier_frais_livraison_conditionnels($rates) {
 }
 add_filter( 'woocommerce_package_rates', 'modifier_frais_livraison_conditionnels', 10, 2 );
 
+
 /**
  * Masque la version de wordpress dans la balise meta
  * @return string
@@ -128,6 +135,7 @@ function cs_remove_version() {
     return '';
 }
 add_filter('the_generator', 'cs_remove_version');
+
 
 /**
  * Masquer la version de WordPress des scripts et style
@@ -143,6 +151,7 @@ function fjarrett_remove_wp_version_strings( $src ) {
 }
 add_filter( 'script_loader_src', 'fjarrett_remove_wp_version_strings' );
 add_filter( 'style_loader_src', 'fjarrett_remove_wp_version_strings' );
+
 
 /**
  * Masque les erreurs de connexion d administration
