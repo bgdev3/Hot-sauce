@@ -135,3 +135,10 @@ function fjarrett_remove_wp_version_strings( $src ) {
 }
 add_filter( 'script_loader_src', 'fjarrett_remove_wp_version_strings' );
 add_filter( 'style_loader_src', 'fjarrett_remove_wp_version_strings' );
+
+/* Masquer les erreurs de connexion à l'administration */
+function wpm_hide_errors() {
+	// On retourne notre propre phrase d'erreur
+	return "L'identifiant ou le mot de passe est incorrect";
+}
+add_filter('login_errors', 'wpm_hide_errors');
