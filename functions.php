@@ -29,7 +29,9 @@ add_theme_support( 'post-thumbnails' );
 // Active l'affichage grande largeur(pour les images)
 add_theme_support( "align-wide" );
 
-
+/**
+ * Ajoute une personnalisation pour l'image d'accueil
+ */
 function themeTuto_customize_register($wp_customize) {
     
 	//Personnalise l'image de la page d'accueil
@@ -84,7 +86,7 @@ add_action('wp_print_scripts', function () {
 
 /**
  * Gère les fluctuation du prix de livraison selon le panier
- * 
+ *  
  */
 function modifier_frais_livraison_conditionnels($rates) {
     // Récupère le nombre de produits panier
@@ -118,13 +120,19 @@ function modifier_frais_livraison_conditionnels($rates) {
 }
 add_filter( 'woocommerce_package_rates', 'modifier_frais_livraison_conditionnels', 10, 2 );
 
-//Masquer la version de WordPress
+/**
+ * Masque la version de wordpress dans la balise meta
+ * @return string
+ */
 function cs_remove_version() {
     return '';
 }
 add_filter('the_generator', 'cs_remove_version');
 
-//Masquer la version de WordPress des scripts et style
+/**
+ * Masquer la version de WordPress des scripts et style
+ * @return string 
+ */
 function fjarrett_remove_wp_version_strings( $src ) {
     global $wp_version;
     parse_str(parse_url($src, PHP_URL_QUERY), $query);
@@ -136,9 +144,11 @@ function fjarrett_remove_wp_version_strings( $src ) {
 add_filter( 'script_loader_src', 'fjarrett_remove_wp_version_strings' );
 add_filter( 'style_loader_src', 'fjarrett_remove_wp_version_strings' );
 
-/* Masquer les erreurs de connexion à l'administration */
+/**
+ * Masque les erreurs de connexion d administration
+ * @return string les messassage d'erreur
+ */
 function wpm_hide_errors() {
-	// On retourne notre propre phrase d'erreur
 	return "L'identifiant ou le mot de passe est incorrect";
 }
 add_filter('login_errors', 'wpm_hide_errors');
