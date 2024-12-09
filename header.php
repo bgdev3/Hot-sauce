@@ -78,7 +78,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
 						<a href="#primary"><i class="fa-solid fa-chevron-down"></i></a>
 					</p>
 					<div class="title_img">
-						<p><?Php echo bloginfo(); ?></p>
+						<p class="police-title"><?Php echo bloginfo(); ?></p>
 						<p><?php echo bloginfo('description'); ?></p>
 					</div>
 				</div>

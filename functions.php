@@ -22,6 +22,9 @@ function child_enqueue_scripts() {
 	wp_enqueue_style( 'astra-child-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), ASTRA_CHILD_THEME_VERSION, 'all' );
     // Charge le police
 	wp_enqueue_script('font-awesome-kit', 'https://kit.fontawesome.com/878534cf28.js');
+    // Charge la police GoogoleFont
+    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Pacifico&display=swap', false ); 
+
 }
 add_action( 'wp_enqueue_scripts', 'child_enqueue_scripts' );
 
@@ -99,7 +102,7 @@ function modifier_frais_livraison_conditionnels($rates) {
     $cartCount = WC()->cart->get_cart_contents_count();
 
     // Si le panier est d'au moins 90euros, indique uniquement la livraison gratuite
-   if (WC()->cart->get_subtotal() >= 90 ) {
+   if (WC()->cart->get_subtotal() >= 60 ) {
         foreach ($rates as $rate_id => $rate) {
             // Désactive toutes les autres méthodes de livraison 
             if ('free_shipping' !== $rate->method_id) {
@@ -161,3 +164,43 @@ function wpm_hide_errors() {
 	return "L'identifiant ou le mot de passe est incorrect";
 }
 add_filter('login_errors', 'wpm_hide_errors');
+
+function afficher_categories_par_bloc() {
+    if (is_shop() || is_product_category()) {
+        // Récupérer toutes les catégories de produits
+        $terms = get_terms(array(
+            'taxonomy'   => 'product_cat',
+            'orderby'    => 'name',
+            'hide_empty' => false, // Afficher même celles qui n'ont pas de produits
+        ));
+
+        if (!empty($terms) && !is_wp_error($terms)) {
+            echo '<div class="categories-blocks-wrapper">'; // Conteneur principal des blocs de catégories
+
+            // Afficher chaque catégorie dans un bloc
+            foreach ($terms as $term) {
+
+           
+
+
+
+                $background_image_url = get_term_meta($term->term_id, 'thumbnail_id', true);
+                $background_image_url  = wp_get_attachment_url( $background_image_url );
+                    if ($background_image_url) {
+                        $background_image = 'url("' . esc_url("http://piments-du-soleil/wp-content/uploads/2024/11/hot-sauce.jpg") . '")';
+                    } else {
+                        $background_image = 'url("http://piments-du-soleil/wp-content/uploads/2024/11/hot-sauce.jpg")'; // Image par défaut si aucune image personnalisée n'est définie
+                    }
+                echo '<div class="categories-block  style="background-image: ' . $background_image  . ';">'; // Conteneur pour chaque catégorie
+                echo '<h3 class="category-title"><a href="' . get_term_link($term) . '">' . $term->name . '</a></h3>';
+                echo '<p class="category-description">' . $term->description . '</p>';
+                echo '</div>'; // Fin du bloc de catégorie
+            }
+
+            echo '</div>'; // Fin du conteneur principal
+        }
+
+        
+    }
+}
+add_action('woocommerce_before_shop_loop', 'afficher_categories_par_bloc', 5);
