@@ -225,14 +225,6 @@ img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail, img.wp-post-ima
     filter: brightness(1.4);
 }
 
-/* Style du contenair produit */
-.astra-shop-thumbnail-wrap {
-    /* border-radius: 50px 50px;
-    background-color: #fbfbfb;
-    border: 1px solid #e7e7e7; */
-    /* padding: 1em; */
-}
-
 .woocommerce-js ul.products li.product a img, .woocommerce-page ul.products li.product a img {
     border-radius: 10px;
 }
