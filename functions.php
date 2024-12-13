@@ -166,7 +166,8 @@ function wpm_hide_errors() {
 add_filter('login_errors', 'wpm_hide_errors');
 
 function afficher_categories_par_bloc() {
-    if (is_shop() || is_product_category()) {
+    // Si on est sur la boutique et s'il y a des catégoties de produits et si on se situe uniauement sur la page d'acceuil.
+    if (is_shop() || is_product_category() && is_front_page()) {
         // Récupérer toutes les catégories de produits
         $terms = get_terms(array(
             'taxonomy'   => 'product_cat',
@@ -179,19 +180,7 @@ function afficher_categories_par_bloc() {
 
             // Afficher chaque catégorie dans un bloc
             foreach ($terms as $term) {
-
-           
-
-
-
-                $background_image_url = get_term_meta($term->term_id, 'thumbnail_id', true);
-                $background_image_url  = wp_get_attachment_url( $background_image_url );
-                    if ($background_image_url) {
-                        $background_image = 'url("' . esc_url("http://piments-du-soleil/wp-content/uploads/2024/11/hot-sauce.jpg") . '")';
-                    } else {
-                        $background_image = 'url("http://piments-du-soleil/wp-content/uploads/2024/11/hot-sauce.jpg")'; // Image par défaut si aucune image personnalisée n'est définie
-                    }
-                echo '<div class="categories-block  style="background-image: ' . $background_image  . ';">'; // Conteneur pour chaque catégorie
+                echo '<div class="categories-block">'; // Conteneur pour chaque catégorie
                 echo '<h3 class="category-title"><a href="' . get_term_link($term) . '">' . $term->name . '</a></h3>';
                 echo '<p class="category-description">' . $term->description . '</p>';
                 echo '</div>'; // Fin du bloc de catégorie
@@ -199,8 +188,34 @@ function afficher_categories_par_bloc() {
 
             echo '</div>'; // Fin du conteneur principal
         }
-
-        
     }
 }
 add_action('woocommerce_before_shop_loop', 'afficher_categories_par_bloc', 5);
+
+/**
+ * Ajoute du contenu juste avant le footer
+ */
+function add_content_footer() {
+    echo "<section class='flex-logo'>   <div> Garanti sans gluten </div>
+                                        <div> Paiement sécurisé</div>
+                                        <div> Livraison 1 à 2 jours ouvrés </div>
+        </section>";
+}
+add_action('astra_footer_before', 'add_content_footer');
+
+// function ajouter_note_avec_etoiles_boutique( $rating_html, $product ) {
+//     // Vérifie si le produit a une note
+//     if ( $product->get_average_rating() > 0 ) {
+//         $average_rating = $product->get_average_rating(); // Note moyenne du produit
+//         $rating_count = $product->get_rating_count(); // Nombre d'avis
+
+//         // Ajoute la note et le nombre d'avis après les étoiles
+//         $rating_html .= '<div class="average-rating">';
+//         $rating_html .= '<span class="average-rating-value">(' . $average_rating . ' / 5) - ' . $rating_count . ' avis</span>';
+//         $rating_html .= '</div>';
+//     }
+    
+//     return $rating_html;
+// }
+
+// add_filter( 'woocommerce_product_get_rating_html', 'ajouter_note_avec_etoiles_boutique', 10, 2 );
