@@ -49,7 +49,7 @@ div.ast-primary-header-bar, div#content, .woocommerce-cart .cart-collaterals .ca
     background-color: #1e1e1e;
 }
 
-.police-title, .site-title a{
+.police-title, .site-title a, .woocommerce-products-header__title.page-title, .fl-heading span{
     font-family: "Pacifico", cursive;
     font-weight: 400;
     font-style: normal;
@@ -215,13 +215,8 @@ p.woocommerce-result-count{
 /* Disposition des produits en colonnes */
 .woocommerce-page ul.products:not(.elementor-grid), .woocommerce.mobile-columns-2 ul.products:not(.elementor-grid),
     .woocommerce-page.mobile-columns-2 ul.products:not(.elementor-grid) {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-    /* width: 50%; */
     width: 100%;
-    padding-bottom: 2em;
+    padding-bottom: 5em;
 }
 
 /* Eclaircit la luminosité des photos */
@@ -683,6 +678,12 @@ input[type=submit].news:hover{
     background-color: #1e1e1e;
     color: #B51C04;
 }
+
+ .woocommerce.ast-page-builder-template .site-main {
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 /******* MEDIA QUERIES ************/
 
 @media (480px <= width <= 768px) {
@@ -698,7 +699,7 @@ input[type=submit].news:hover{
 
     .categories-blocks-wrapper{
         gap: 20%;
-        transform: translateY(-200%);
+        transform: translateY(-130%);
     }
     
 
@@ -726,7 +727,7 @@ input[type=submit].news:hover{
    
     .categories-blocks-wrapper{
         gap: 20%;
-        transform: translateY(-190%);
+        transform: translateY(-130%);
     }
     p:has(i.fa-solid.fa-chevron-down){
         bottom: 5%;
