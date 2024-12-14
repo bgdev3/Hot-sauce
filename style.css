@@ -649,10 +649,10 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     color: #6faf77;
 }
 
-.flex{
+/* .flex{
     flex-direction: column;
-}
-.flex input[type=email] {
+} */
+input[type=email] {
     margin-bottom: 2%;
 }
 
@@ -673,6 +673,7 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
 }
 
 input[type=submit].news{
+    display: inline;
     background-color: #B51C04;
     color: #ededed;
     transition: all .5s ease;
@@ -816,11 +817,9 @@ input[type=submit].news:hover{
 
 @media ( width >= 1024px ) {
 
-    .flex{
-        flex-direction:row;
-    }
-    .flex input[type=email] {
+    input[type=email] {
         margin-bottom: 0;
+        width: 50%;
     }
     header.entry-header .entry-title{
         margin-top: 0;
