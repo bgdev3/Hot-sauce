@@ -603,21 +603,18 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     gap: 5%;
     margin: 1em 0 2em;
     border-radius: 50px 50px;
+    backdrop-filter: blur(10px);
     transform: translateY(-400%);
     background-color: #1e1e1e54;
 }
 
 .categories-block {
-    /* border: 1px solid #ddd; */
-    /* padding: 15px; */
-    /* background-color: #2d2d2d; */
     border-radius: 5px;
     text-align: center;
-    /* width: 100%; */
-    /* position: absolute;
-    top: 50%;
-    width: 100%; */
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
 }
 
 .categories-block h3 {
