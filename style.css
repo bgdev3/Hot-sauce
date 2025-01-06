@@ -600,11 +600,11 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
 .categories-blocks-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grille responsive */
-    gap: 5%;
+    /* gap: 5%; */
     margin: 1em 0 2em;
     border-radius: 50px 50px;
     backdrop-filter: blur(10px);
-    transform: translateY(-400%);
+    transform: translateY(-300%);
     background-color: #1e1e1e54;
 }
 
@@ -725,7 +725,7 @@ input[type=submit].news:hover{
    
     .categories-blocks-wrapper{
         gap: 20%;
-        transform: translateY(-130%);
+        transform: translateY(-125%);
     }
     p:has(i.fa-solid.fa-chevron-down){
         bottom: 5%;
