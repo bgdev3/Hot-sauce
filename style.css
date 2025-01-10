@@ -205,6 +205,7 @@ p.woocommerce-result-count{
     background-color: #fbfbfb;
     border-radius: 5px;
     float: left;
+    margin-top: 10%;
 }
 
 .ast-woocommerce-container{
@@ -604,8 +605,11 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     margin: 1em 0 2em;
     border-radius: 50px 50px;
     backdrop-filter: blur(10px);
-    transform: translateY(-300%);
+    transform: translate(-50%, -300%);
     background-color: #1e1e1e54;
+    position: absolute;
+    left: 50%;
+    width: 90%;
 }
 
 .categories-block {
@@ -697,7 +701,7 @@ input[type=submit].news:hover{
 
     .categories-blocks-wrapper{
         gap: 20%;
-        transform: translateY(-130%);
+        transform: translateY(-50%, -100%);
     }
     
 
@@ -725,7 +729,7 @@ input[type=submit].news:hover{
    
     .categories-blocks-wrapper{
         gap: 20%;
-        transform: translateY(-125%);
+        transform: translateY(-50%, -100%);
     }
     p:has(i.fa-solid.fa-chevron-down){
         bottom: 5%;
