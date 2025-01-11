@@ -727,10 +727,7 @@ input[type=submit].news:hover{
         gap: 20%;
         transform: translate(-50%, -125%);
     }
-    p:has(i.fa-solid.fa-chevron-down){
-        bottom: 5%;
-    }
-
+    
     div.title_img{
         font-size: 4.5em;
     } 
