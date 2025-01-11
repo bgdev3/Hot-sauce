@@ -220,10 +220,6 @@ p.woocommerce-result-count{
     padding-bottom: 5em;
 }
 
-/* Eclaircit la luminosité des photos */
-img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail, img.wp-post-image, img.zoomImg, li img{
-    /* filter: brightness(1.4); */
-}
 
 .woocommerce-js ul.products li.product a img, .woocommerce-page ul.products li.product a img {
     border-radius: 10px;
@@ -609,7 +605,7 @@ aside.footer-widget-area.widget-area.site-footer-focus-item.footer-widget-area-i
     background-color: #1e1e1e54;
     position: absolute;
     left: 50%;
-    width: 90%;
+    width: 95%;
 }
 
 .categories-block {
@@ -700,8 +696,8 @@ input[type=submit].news:hover{
     } 
 
     .categories-blocks-wrapper{
-        gap: 20%;
-        transform: translateY(-50%, -100%);
+        /* gap: 20%; */
+        transform: translate(-50%, -125%);
     }
     
 
@@ -729,7 +725,7 @@ input[type=submit].news:hover{
    
     .categories-blocks-wrapper{
         gap: 20%;
-        transform: translateY(-50%, -100%);
+        transform: translate(-50%, -125%);
     }
     p:has(i.fa-solid.fa-chevron-down){
         bottom: 5%;
@@ -820,6 +816,10 @@ input[type=submit].news:hover{
 
 @media ( width >= 1024px ) {
 
+    .categories-blocks-wrapper{
+        width: 70%;
+
+    }
     input[type=email] {
         margin-bottom: 0;
         width: 50%;

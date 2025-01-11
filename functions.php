@@ -198,7 +198,7 @@ add_action('woocommerce_before_shop_loop', 'afficher_categories_par_bloc', 5);
 function add_content_footer() {
     echo "<section class='flex-logo'>   <div> Garanti sans gluten </div>
                                         <div> Paiement sécurisé</div>
-                                        <div> Livraison 1 à 2 jours ouvrés </div>
+                                        <div> Livraison 2 à 6 jours ouvrés </div>
         </section>";
 }
 add_action('astra_footer_before', 'add_content_footer');
