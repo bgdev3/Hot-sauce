@@ -158,7 +158,7 @@ add_filter( 'style_loader_src', 'fjarrett_remove_wp_version_strings' );
 
 /**
  * Masque les erreurs de connexion d administration
- * @return string les messassage d'erreur
+ * @return string les messssage d'erreur
  */
 function wpm_hide_errors() {
 	return "L'identifiant ou le mot de passe est incorrect";
@@ -202,20 +202,3 @@ function add_content_footer() {
         </section>";
 }
 add_action('astra_footer_before', 'add_content_footer');
-
-// function ajouter_note_avec_etoiles_boutique( $rating_html, $product ) {
-//     // Vérifie si le produit a une note
-//     if ( $product->get_average_rating() > 0 ) {
-//         $average_rating = $product->get_average_rating(); // Note moyenne du produit
-//         $rating_count = $product->get_rating_count(); // Nombre d'avis
-
-//         // Ajoute la note et le nombre d'avis après les étoiles
-//         $rating_html .= '<div class="average-rating">';
-//         $rating_html .= '<span class="average-rating-value">(' . $average_rating . ' / 5) - ' . $rating_count . ' avis</span>';
-//         $rating_html .= '</div>';
-//     }
-    
-//     return $rating_html;
-// }
-
-// add_filter( 'woocommerce_product_get_rating_html', 'ajouter_note_avec_etoiles_boutique', 10, 2 );
