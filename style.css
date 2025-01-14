@@ -23,6 +23,10 @@ body{
     user-select: none;
 }
 
+.grecaptcha-badge{
+    z-index: 9999;
+}
+
 h2.woocommerce-loop-product__title, .related h2{
     --ast-global-color-2: #fbfbfb;
 }
@@ -88,7 +92,11 @@ div.ast-primary-header-bar, div#content, .woocommerce-cart .cart-collaterals .ca
 }
 
 .ast-builder-menu-mobile .main-navigation .main-header-menu{
-    background-color: #34493c;
+    /* background-color: #34493c; */
+}
+.ast-builder-menu-mobile .main-navigation .main-header-menu{
+    background-color: #252525;
+    background-image: none;
 }
 
 .ast-builder-menu-mobile .main-navigation .menu-item.current-menu-item > .menu-link{

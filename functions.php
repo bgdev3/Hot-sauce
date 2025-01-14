@@ -202,3 +202,41 @@ function add_content_footer() {
         </section>";
 }
 add_action('astra_footer_before', 'add_content_footer');
+
+
+/**
+ * Personnalise les styles des emails WooCommerce
+ */
+function personnaliser_couleur_email_woocommerce( $email_content, $email ) {
+    // Vérifier si l'email est un e-mail WooCommerce spécifique
+    if ( isset( $email->id ) && in_array( $email->id, array( 'new_order', 'processing_order', 'completed_order' ) ) ) {
+        // Ajouter du CSS personnalisé dans le contenu de l'email
+        $email_content = '<style>
+            div#m_-2663956121969469923wrapper {
+                padding: 20px 0 !important;
+
+            }
+            body {
+                color: #fff; 
+            }
+            h1, h2, h3 {
+                color: #B51C04; 
+            }
+            p {
+                color: #fff; 
+            }
+            .im {
+               color : #fff
+               }
+            .email-order-details {
+                color: #fff; 
+            }
+        </style>' . $email_content;
+    }
+
+    return $email_content;
+}
+add_filter( 'woocommerce_email_content', 'personnaliser_couleur_email_woocommerce', 10, 2 );
+
+
+
