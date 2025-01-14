@@ -24,7 +24,7 @@ body{
 }
 
 .grecaptcha-badge{
-    z-index: 9999;
+    z-index: 9999 !important;
 }
 
 h2.woocommerce-loop-product__title, .related h2{
