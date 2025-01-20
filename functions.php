@@ -165,6 +165,10 @@ function wpm_hide_errors() {
 }
 add_filter('login_errors', 'wpm_hide_errors');
 
+
+/**
+ * AJoute les categories de produits en blocs sur la page d'accueil
+ */
 function afficher_categories_par_bloc() {
     // Si on est sur la boutique et s'il y a des catégoties de produits et si on se situe uniauement sur la page d'acceuil.
     if (is_shop() || is_product_category() && is_front_page()) {
@@ -191,6 +195,7 @@ function afficher_categories_par_bloc() {
     }
 }
 add_action('woocommerce_before_shop_loop', 'afficher_categories_par_bloc', 5);
+
 
 /**
  * Ajoute du contenu juste avant le footer
@@ -238,6 +243,10 @@ function personnaliser_couleur_email_woocommerce( $email_content, $email ) {
 }
 add_filter( 'woocommerce_email_content', 'personnaliser_couleur_email_woocommerce', 10, 2 );
 
+
+/**
+ * Affiche le code court des avis google juste après les produits de la boutique
+ */
 function afficher_code_court_apres_produits() {
     echo do_shortcode('[trustindex no-registration=google]'); // Remplacez [votre_shortcode] par le code court que vous souhaitez afficher
 }
