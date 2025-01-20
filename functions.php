@@ -238,5 +238,10 @@ function personnaliser_couleur_email_woocommerce( $email_content, $email ) {
 }
 add_filter( 'woocommerce_email_content', 'personnaliser_couleur_email_woocommerce', 10, 2 );
 
+function afficher_code_court_apres_produits() {
+    echo do_shortcode('[trustindex no-registration=google]'); // Remplacez [votre_shortcode] par le code court que vous souhaitez afficher
+}
+add_action('woocommerce_after_shop_loop', 'afficher_code_court_apres_produits', 20);
+
 
 
