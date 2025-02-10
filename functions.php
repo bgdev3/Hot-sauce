@@ -203,7 +203,7 @@ add_action('woocommerce_before_shop_loop', 'afficher_categories_par_bloc', 5);
 function add_content_footer() {
     echo "<section class='flex-logo'>   <div> Garanti sans gluten </div>
                                         <div> Paiement sécurisé</div>
-                                        <div> Livraison 2 à 6 jours ouvrés </div>
+                                        <div> Livraison sous 6 jours ouvrés </div>
         </section>";
 }
 add_action('astra_footer_before', 'add_content_footer');
@@ -253,4 +253,17 @@ function afficher_code_court_apres_produits() {
 add_action('woocommerce_after_shop_loop', 'afficher_code_court_apres_produits', 20);
 
 
+/**
+ * Modifie le texte du bouton "Ajouter au panier" en fonction de la disponibilité du produit
+ */
+function change_button_based_on_stock($button_text, $product) {
+    // Vérifier si le produit est en stock
+    if ( ! $product->is_in_stock() ) {
+        // Si le produit n'est pas en stock, modifier le texte du bouton
+        return __('Découvrir', 'textdomain');
+    }
 
+    // Si le produit est en stock, le bouton "Ajouter au panier" reste inchangé
+    return $button_text;
+}
+add_filter('woocommerce_product_add_to_cart_text', 'change_button_based_on_stock', 10, 2);

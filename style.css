@@ -169,8 +169,7 @@ div.img_accueil{
     max-width: 100%;
     width: 100%;
     max-height: 100%;
-    /* filter: brightness(80%); */
-     background-size:cover; 
+    background-size:cover; 
     background-repeat: no-repeat; 
     background-position: center;   
 }
@@ -666,7 +665,7 @@ input[type=email] {
     color: #cacaca;
     text-transform: uppercase;
     letter-spacing: .4em;
-    font-size: .9em;
+    font-size: .8em;
 }
 
 input[type=submit].news{
@@ -729,6 +728,18 @@ body:has(.page404) {
 
 .ti-widget.ti-goog{
     margin-bottom: 2em;
+}
+
+/* Rupture de stock fiche produit */
+ul.products li.product .ast-shop-product-out-of-stock, .woocommerce-page ul.products li.product .ast-shop-product-out-of-stock {
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    color: #B51C04;
+}
+
+/* Bouton découvrir */
+.product_type_simple{
+    border-radius: 50px 50px !important;
 }
 
 /******* MEDIA QUERIES ************/
