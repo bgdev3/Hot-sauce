@@ -884,6 +884,5 @@ function supprimer_paypal_panier() {
                 }
             </style>
             <?php
-            
     }
 }
